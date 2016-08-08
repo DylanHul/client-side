@@ -3,14 +3,14 @@ var greeting = require('./views/greeting.hbs')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites'
 
-xhr.get(endpoint, function (err, data) {
+xhr.get(endpoint, function (err, res) {
   if (err) {
     console.error(err)
   }
 
   // In case you're curious
   console.log(data.body) // FYI: data.body is a string
-  var NewData = data.uri
+  var NewData = res.body
 
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
