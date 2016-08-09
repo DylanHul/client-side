@@ -1,40 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
-
-var xhr = require('xhr');
-var greeting = require('./views/greeting.hbs');
-var button = require('./views/button.hbs');
-
-var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544';
-
-xhr.get(endpoint, function (err, data) {
-  if (err) {
-    console.error(err);
-  }
-
-  // In case you're curious
-  console.log(data.body); // FYI: data.body is a string
-  // var newData = data.body
-  var issName = JSON.parse(data.body).name;
-  var issLat = JSON.parse(data.body).latitude;
-  var issLon = JSON.parse(data.body).longitude;
-
-  // Replace 'Space' below with the response
-
-  var target = document.getElementsByTagName('main')[0];
-  target.innerHTML = greeting({ name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon });
-
-  document.getElementById('button').addEventListener('click', refreshButton);
-
-  function refreshButton() {
-
-    var issVel = JSON.parse(data.body).velocity;
-    var issAlt = JSON.parse(data.body).altitude;
-
-    var target = document.getElementsByTagName('main')[0];
-    target.innerHTML += button({ issVel: issVel, issAlt: issAlt });
-  }
-});
+"use strict";var xhr=require("xhr"),greeting=require("./views/greeting.hbs"),button=require("./views/button.hbs"),endpoint="https://api.wheretheiss.at/v1/satellites/25544";xhr.get(endpoint,function(e,t){function n(){var e=JSON.parse(t.body).velocity,n=JSON.parse(t.body).altitude,i=document.getElementsByTagName("main")[0];i.innerHTML+=button({issVel:e,issAlt:n})}e&&console.error(e),console.log(t.body);var i=JSON.parse(t.body).name,s=JSON.parse(t.body).latitude,r=JSON.parse(t.body).longitude,o=document.getElementsByTagName("main")[0];o.innerHTML=greeting({name:"Dylan",issName:i,issLat:s,issLon:r}),document.getElementById("button").addEventListener("click",n)});
 
 },{"./views/button.hbs":29,"./views/greeting.hbs":30,"xhr":27}],2:[function(require,module,exports){
 var isFunction = require('is-function')
@@ -1524,33 +1489,7 @@ function extend() {
 }
 
 },{}],29:[function(require,module,exports){
-// hbsfy compiled Handlebars template
-var HandlebarsCompiler = require('hbsfy/runtime');
-module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
-
-  return "<p>velocity: "
-    + alias4(((helper = (helper = helpers.issVel || (depth0 != null ? depth0.issVel : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"issVel","hash":{},"data":data}) : helper)))
-    + " altitude: "
-    + alias4(((helper = (helper = helpers.issAlt || (depth0 != null ? depth0.issAlt : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"issAlt","hash":{},"data":data}) : helper)))
-    + "</p>\n";
-},"useData":true});
-
+var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(l,e,s,a,i){var n,t=null!=e?e:{},r=s.helperMissing,u="function",p=l.escapeExpression;return"<p>velocity: "+p((n=null!=(n=s.issVel||(null!=e?e.issVel:e))?n:r,typeof n===u?n.call(t,{name:"issVel",hash:{},data:i}):n))+" altitude: "+p((n=null!=(n=s.issAlt||(null!=e?e.issAlt:e))?n:r,typeof n===u?n.call(t,{name:"issAlt",hash:{},data:i}):n))+"</p>\n"},useData:!0});
 },{"hbsfy/runtime":23}],30:[function(require,module,exports){
-// hbsfy compiled Handlebars template
-var HandlebarsCompiler = require('hbsfy/runtime');
-module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
-
-  return "<h1>Hello "
-    + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
-    + "!</h1>\n<h2>"
-    + alias4(((helper = (helper = helpers.issName || (depth0 != null ? depth0.issName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"issName","hash":{},"data":data}) : helper)))
-    + "</h2>\n<p>latitude: "
-    + alias4(((helper = (helper = helpers.issLat || (depth0 != null ? depth0.issLat : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"issLat","hash":{},"data":data}) : helper)))
-    + " longitude: "
-    + alias4(((helper = (helper = helpers.issLon || (depth0 != null ? depth0.issLon : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"issLon","hash":{},"data":data}) : helper)))
-    + "</p>\n<button id='button'>Refresh Info</button>\n";
-},"useData":true});
-
+var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(a,n,e,l,s){var t,i=null!=n?n:{},o=e.helperMissing,u="function",m=a.escapeExpression;return"<h1>Hello "+m((t=null!=(t=e.name||(null!=n?n.name:n))?t:o,typeof t===u?t.call(i,{name:"name",hash:{},data:s}):t))+"!</h1>\n<h2>"+m((t=null!=(t=e.issName||(null!=n?n.issName:n))?t:o,typeof t===u?t.call(i,{name:"issName",hash:{},data:s}):t))+"</h2>\n<p>latitude: "+m((t=null!=(t=e.issLat||(null!=n?n.issLat:n))?t:o,typeof t===u?t.call(i,{name:"issLat",hash:{},data:s}):t))+" longitude: "+m((t=null!=(t=e.issLon||(null!=n?n.issLon:n))?t:o,typeof t===u?t.call(i,{name:"issLon",hash:{},data:s}):t))+"</p>\n<button id='button'>Refresh Info</button>\n"},useData:!0});
 },{"hbsfy/runtime":23}]},{},[1]);
