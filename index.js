@@ -21,13 +21,10 @@ xhr.get(endpoint, function (err, data) {
 
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
+  
   document.getElementById('button').addEventListener('click', refreshButton)
 
     function refreshButton() {
-      // xhr.get(endpoint, function (err, data) {
-      //   if (err) {
-      //     console.error(err)
-      //   }
 
         var issVel = JSON.parse(data.body).velocity
         var issAlt = JSON.parse(data.body).altitude
