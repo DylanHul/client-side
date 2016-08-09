@@ -33,11 +33,11 @@ xhr.get(endpoint, function (err, data) {
         var target = document.getElementsByTagName('main')[0]
         target.innerHTML += button({issVel: issVel, issAlt:issAlt})
     }
-    function moreButton() {
-
-        var allData = JSON.parse(data.body)
-
-        var target = document.getElementsByTagName('main')[0]
-        target.innerHTML += button({allData: allData})
-    }
+    // function moreButton() {
+    //
+    //     var allData = JSON.parse(data.body)
+    //
+    //     var target = document.getElementsByTagName('main')[0]
+    //     target.innerHTML += button({allData: allData})
+    // }
 })
