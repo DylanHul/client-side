@@ -1,5 +1,6 @@
 var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
+var button = require('./views/button.hbs')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 
@@ -20,18 +21,15 @@ xhr.get(endpoint, function (err, data) {
 
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
+  
   document.getElementById('button').addEventListener('click', refreshButton)
-})
 
+    function refreshButton() {
 
-function refreshButton() {
-  xhr.get(endpoint, function (err, data) {
-    if (err) {
-      console.error(err)
+        var issVel = JSON.parse(data.body).velocity
+        var issAlt = JSON.parse(data.body).altitude
+
+        var target = document.getElementsByTagName('main')[0]
+        target.innerHTML += button({issVel: issVel, issAlt:issAlt})
     }
-
-    var dataRe = JSON.parse(data.body).altitude
-
-    var target = document.getElementsByTagName('main')[0]
-    target.innerHTML = buttonRender({dataRe: dataRe})
-}
+})
