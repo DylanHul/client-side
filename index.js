@@ -1,5 +1,6 @@
 var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
+var button = require('./views/button.hbs')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 
@@ -24,14 +25,14 @@ xhr.get(endpoint, function (err, data) {
 })
 
 
-function refreshButton() {
-  // xhr.get(endpoint, function (err, data) {
-  //   if (err) {
-  //     console.error(err)
-  //   }
-  //   console.log(data.body)
-  //   var dataRe = JSON.parse(data.body)
-  //
-  //   var target = document.getElementsByTagName('main')[0]
-  //   target.innerHTML = greeting({dataRe: dataRe})
-}
+// function refreshButton() {
+//   xhr.get(endpoint, function (err, data) {
+//     if (err) {
+//       console.error(err)
+//     }
+//     console.log(data.body)
+//     var dataRe = data.body
+//
+//     var target = document.getElementsByTagName('main')[0]
+//     target.innerHTML = button({dataRe: dataRe})
+// }
