@@ -16,14 +16,10 @@ xhr.get(endpoint, function (err, data) {
   var issLat = JSON.parse(data.body).latitude
   var issLon = JSON.parse(data.body).longitude
 
-
-  // Replace 'Space' below with the response
-
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
 
   document.getElementById('button').addEventListener('click', button)
-  // document.getElementById('moreButton').addEventListener('click', moreButton)
 
     function button() {
 
@@ -33,11 +29,5 @@ xhr.get(endpoint, function (err, data) {
         var target = document.getElementsByTagName('main')[0]
         target.innerHTML += button({issVel: issVel, issAlt:issAlt})
     }
-    // function moreButton() {
-    //
-    //     var allData = JSON.parse(data.body)
-    //
-    //     var target = document.getElementsByTagName('main')[0]
-    //     target.innerHTML += button({allData: allData})
-    // }
+
 })
