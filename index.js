@@ -22,14 +22,22 @@ xhr.get(endpoint, function (err, data) {
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
 
-  document.getElementById('button').addEventListener('click', refreshButton)
+  document.getElementById('button').addEventListener('click', button)
+  document.getElementById('moreButton').addEventListener('click', moreButton)
 
-    function refreshButton() {
+    function button() {
 
         var issVel = JSON.parse(data.body).velocity
         var issAlt = JSON.parse(data.body).altitude
 
         var target = document.getElementsByTagName('main')[0]
         target.innerHTML += button({issVel: issVel, issAlt:issAlt})
+    }
+    function moreButton() {
+
+        var allData = JSON.parse(data.body)
+
+        var target = document.getElementsByTagName('main')[0]
+        target.innerHTML += button({allData: allData})
     }
 })
