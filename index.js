@@ -30,9 +30,9 @@ xhr.get(endpoint, function (err, data) {
       //   }
 
         var issVel = JSON.parse(data.body).velocity
-        var issAlt = JSON.parse(data.body).issAlt
+        var issAlt = JSON.parse(data.body).altitude
 
         var target = document.getElementsByTagName('main')[0]
-        target.innerHTML += button({dataRe: dataRe})
+        target.innerHTML += button({issVel: issVel, issAlt:issAlt})
     }
 })
