@@ -29,7 +29,8 @@ xhr.get(endpoint, function (err, data) {
       //     console.error(err)
       //   }
 
-        var dataRe = JSON.parse(data.body).velocity
+        var issVel = JSON.parse(data.body).velocity
+        var issAlt = JSON.parse(data.body).issAlt
 
         var target = document.getElementsByTagName('main')[0]
         target.innerHTML += button({dataRe: dataRe})
