@@ -23,7 +23,7 @@ xhr.get(endpoint, function (err, data) {
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
 
   document.getElementById('button').addEventListener('click', button)
-  document.getElementById('moreButton').addEventListener('click', moreButton)
+  // document.getElementById('moreButton').addEventListener('click', moreButton)
 
     function button() {
 
