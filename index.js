@@ -14,5 +14,5 @@ xhr.get(endpoint, function (err, data) {
   var DataName = JSON.parse(data.body).name
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = greeting({name: 'Dylan', DataName: NewData})
+  target.innerHTML = greeting({name: 'Dylan', NewData: DataName})
 })
