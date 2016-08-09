@@ -24,18 +24,14 @@ xhr.get(endpoint, function (err, data) {
   document.getElementById('button').addEventListener('click', refreshButton)
 
     function refreshButton() {
-          console.log(data.body)
+      // xhr.get(endpoint, function (err, data) {
+      //   if (err) {
+      //     console.error(err)
+      //   }
+
+        var dataRe = data.body
+
+        var target = document.getElementsByTagName('main')[0]
+        target.innerHTML = button({dataRe: dataRe})
     }
 })
-
-
-
-//   xhr.get(endpoint, function (err, data) {
-//     if (err) {
-//       console.error(err)
-//     }
-
-//     var dataRe = data.body
-//
-//     var target = document.getElementsByTagName('main')[0]
-//     target.innerHTML = button({dataRe: dataRe})
