@@ -32,6 +32,6 @@ xhr.get(endpoint, function (err, data) {
         var dataRe = data.body
 
         var target = document.getElementsByTagName('main')[0]
-        target.innerHTML = button({dataRe: dataRe})
+        target.innerHTML += button({dataRe: dataRe})
     }
 })
