@@ -1,17 +1,30 @@
 var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
-var
-var endpoint = 'https://api.wheretheiss.at/v1/satellites'
 
-xhr.get(endpoint, function (err, data) {
-  if (err) {
-    console.error(err)
-  }
+var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 
-  // In case you're curious
-  console.log(data.body) // FYI: data.body is a string
-  var NewData = JSON.parse(data.body).name
-  // Replace 'Space' below with the response
-  var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = greeting({name: 'Dylan', NewData: NewData})
-})
+function refreshButton() {
+
+  xhr.get(endpoint, function (err, data) {
+    if (err) {
+      console.error(err)
+    }
+
+    // In case you're curious
+    console.log(data.body) // FYI: data.body is a string
+    // var newData = data.body
+    var issName = JSON.parse(data.body).name
+    var issLat = JSON.parse(data.body).latitude
+    var issLon = JSON.parse(data.body).longitude
+
+    // Replace 'Space' below with the response
+
+    var target = document.getElementsByTagName('main')[0]
+    target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
+  })
+}
+// var refreshButton = function() {
+//
+// }
+
+document.getElementsById('button').addEventListner(click, refreshButton)
