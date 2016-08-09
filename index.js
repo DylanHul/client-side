@@ -23,7 +23,9 @@ xhr.get(endpoint, function (err, data) {
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
 
   document.getElementById('button').addEventListener('click', refreshButton)
+
   document.getElementById('moreButton').addEventListener('click', moreButton)
+  
     function refreshButton() {
 
         var issVel = JSON.parse(data.body).velocity
