@@ -13,7 +13,7 @@ xhr.get(endpoint, function (err, data) {
   // var newData = data.body
   var issName = JSON.parse(data.body).name
   var issLat = JSON.parse(data.body).latitude
-  var issLon = JSON.parse(data.body).latitude
+  var issLon = JSON.parse(data.body).longitude
 
   // Replace 'Space' below with the response
 
