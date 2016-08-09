@@ -12,8 +12,8 @@ xhr.get(endpoint, function (err, data) {
   console.log(data.body) // FYI: data.body is a string
   var newData = data.body
   var issName = JSON.parse(data.body).name
-  var issLatLon = JSON.parse(data.body).latitude.longitude
+  var issLat = JSON.parse(data.body).latitude
   // Replace 'Space' below with the response
   var target = document.getElementsByTagName('main')[0]
-  target.innerHTML = greeting({name: 'Dylan', newData: newData, issLatLon: issName})
+  target.innerHTML = greeting({name: 'Dylan', newData: newData, issLat: issName})
 })
