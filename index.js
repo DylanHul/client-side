@@ -25,4 +25,4 @@ var refreshButton = function() {
   console.log("hello")
 }
 
-document.getElementsById('button').addEventListner('click', refreshButton)
+document.getElementById('button').addEventListner('click', refreshButton)
