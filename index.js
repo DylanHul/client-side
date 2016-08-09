@@ -1,4 +1,4 @@
-var xhr = require('xhr')
+const xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
 var button = require('./views/button.hbs')
 
@@ -21,7 +21,7 @@ xhr.get(endpoint, function (err, data) {
 
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
-  
+
   document.getElementById('button').addEventListener('click', refreshButton)
 
     function refreshButton() {
