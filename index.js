@@ -22,17 +22,20 @@ xhr.get(endpoint, function (err, data) {
   var target = document.getElementsByTagName('main')[0]
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
   document.getElementById('button').addEventListener('click', refreshButton)
+
+    function refreshButton() {
+          console.log(data.body)
+    }
 })
 
 
-function refreshButton() {
+
 //   xhr.get(endpoint, function (err, data) {
 //     if (err) {
 //       console.error(err)
 //     }
-    console.log(data.body)
+
 //     var dataRe = data.body
 //
 //     var target = document.getElementsByTagName('main')[0]
 //     target.innerHTML = button({dataRe: dataRe})
-}
