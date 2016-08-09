@@ -33,4 +33,13 @@ xhr.get(endpoint, function (err, data) {
         target.innerHTML += button({issVel: issVel, issAlt:issAlt})
     }
 
+        document.getElementById('moreButton').addEventListener('click', moreButton)
+
+        function moreButton() {
+
+            var allData = JSON.parse(data.body)
+
+            var target = document.getElementsByTagName('main')[0]
+            target.innerHTML += newData({allData: allData})
+        }
 })
