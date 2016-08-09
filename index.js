@@ -21,8 +21,8 @@ xhr.get(endpoint, function (err, data) {
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
 })
 
-// var refreshButton = function() {
-//
-// }
+var refreshButton = function() {
+  return data.body
+}
 
 document.getElementsById('button').addEventListner(click, refreshButton)
