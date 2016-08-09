@@ -22,7 +22,7 @@ xhr.get(endpoint, function (err, data) {
 })
 
 var refreshButton = function() {
-  return data.body
+  console.log("hello")
 }
 
-document.getElementsById('button').addEventListner(click, refreshButton)
+document.getElementsById('button').addEventListner('click', refreshButton)
