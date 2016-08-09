@@ -84,7 +84,7 @@ function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];fo
 
 },{}],29:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(l,e,s,a,i){var n,t=null!=e?e:{},r=s.helperMissing,u="function",p=l.escapeExpression;return"<p>velocity: "+p((n=null!=(n=s.issVel||(null!=e?e.issVel:e))?n:r,typeof n===u?n.call(t,{name:"issVel",hash:{},data:i}):n))+" altitude: "+p((n=null!=(n=s.issAlt||(null!=e?e.issAlt:e))?n:r,typeof n===u?n.call(t,{name:"issAlt",hash:{},data:i}):n))+"</p>\n"},useData:!0});
+
 },{"hbsfy/runtime":23}],30:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(a,n,e,l,s){var t,i=null!=n?n:{},o=e.helperMissing,u="function",m=a.escapeExpression;return"<h1>Hello "+m((t=null!=(t=e.name||(null!=n?n.name:n))?t:o,typeof t===u?t.call(i,{name:"name",hash:{},data:s}):t))+"!</h1>\n<h2>"+m((t=null!=(t=e.issName||(null!=n?n.issName:n))?t:o,typeof t===u?t.call(i,{name:"issName",hash:{},data:s}):t))+"</h2>\n<p>latitude: "+m((t=null!=(t=e.issLat||(null!=n?n.issLat:n))?t:o,typeof t===u?t.call(i,{name:"issLat",hash:{},data:s}):t))+" longitude: "+m((t=null!=(t=e.issLon||(null!=n?n.issLon:n))?t:o,typeof t===u?t.call(i,{name:"issLon",hash:{},data:s}):t))+"</p>\n<button id='button'>Refresh Info</button>\n"},useData:!0});
-
 },{"hbsfy/runtime":23}]},{},[1]);
