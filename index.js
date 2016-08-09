@@ -29,7 +29,7 @@ function refreshButton() {
   //   if (err) {
   //     console.error(err)
   //   }
-  //
+    console.log(data.body)
   //   var dataRe = JSON.parse(data.body)
   //
   //   var target = document.getElementsByTagName('main')[0]
