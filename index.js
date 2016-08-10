@@ -32,7 +32,7 @@ xhr.get(endpoint, function (err, data) {
 
         var target = document.getElementsByTagName('main')[0]
         target.innerHTML += button({issVel: issVel, issAlt:issAlt})
-    }
+    };
       document.getElementById('newData').addEventListener('click', moreButton)
 
         function moreButton() {
