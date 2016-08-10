@@ -24,7 +24,7 @@ xhr.get(endpoint, function (err, data) {
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
 
   document.getElementById('button').addEventListener('click', refreshButton)
-
+  document.getElementById('newData').addEventListener('click', moreButton)
     function refreshButton() {
 
         var issVel = JSON.parse(data.body).velocity
@@ -33,7 +33,7 @@ xhr.get(endpoint, function (err, data) {
         var target = document.getElementsByTagName('main')[0]
         target.innerHTML += button({issVel: issVel, issAlt:issAlt})
     }
-      document.getElementById('newData').addEventListener('click', moreButton)
+
 
         function moreButton() {
 
