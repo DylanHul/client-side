@@ -26,10 +26,10 @@ xhr.get(endpoint, function (err, data) {
 
     function refreshButton() {
 
-        var issVel = JSON.parse(data.body).velocity
-        var issAlt = JSON.parse(data.body).altitude
+        const issVel = JSON.parse(data.body).velocity
+        const issAlt = JSON.parse(data.body).altitude
 
-        var target = document.getElementsByTagName('main')[0]
+        const target = document.getElementsByTagName('main')[0]
         target.innerHTML += button({issVel: issVel, issAlt:issAlt})
     }
 })
