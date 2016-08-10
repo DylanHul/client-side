@@ -72,9 +72,9 @@ module.exports=require("handlebars/runtime").default;
 
 },{"handlebars/runtime":22}],24:[function(require,module,exports){
 function isFunction(o){var t=toString.call(o);return"[object Function]"===t||"function"==typeof o&&"[object RegExp]"!==t||"undefined"!=typeof window&&(o===window.setTimeout||o===window.alert||o===window.confirm||o===window.prompt)}module.exports=isFunction;var toString=Object.prototype.toString;
-
 },{}],25:[function(require,module,exports){
 var trim=require("trim"),forEach=require("for-each"),isArray=function(r){return"[object Array]"===Object.prototype.toString.call(r)};module.exports=function(r){if(!r)return{};var e={};return forEach(trim(r).split("\n"),function(r){var t=r.indexOf(":"),i=trim(r.slice(0,t)).toLowerCase(),o=trim(r.slice(t+1));"undefined"==typeof e[i]?e[i]=o:isArray(e[i])?e[i].push(o):e[i]=[e[i],o]}),e};
+
 },{"for-each":2,"trim":26}],26:[function(require,module,exports){
 function trim(r){return r.replace(/^\s*|\s*$/g,"")}exports=module.exports=trim,exports.left=function(r){return r.replace(/^\s*/,"")},exports.right=function(r){return r.replace(/\s*$/,"")};
 },{}],27:[function(require,module,exports){
@@ -83,7 +83,7 @@ function trim(r){return r.replace(/^\s*|\s*$/g,"")}exports=module.exports=trim,e
 function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];for(var n in t)hasOwnProperty.call(t,n)&&(r[n]=t[n])}return r}module.exports=extend;var hasOwnProperty=Object.prototype.hasOwnProperty;
 
 },{}],29:[function(require,module,exports){
-var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(e,l,n,s,t){var a,i=null!=l?l:{},o=n.helperMissing,r="function",u=e.escapeExpression;return"<p>velocity: "+u((a=null!=(a=n.issVel||(null!=l?l.issVel:l))?a:o,typeof a===r?a.call(i,{name:"issVel",hash:{},data:t}):a))+" altitude: "+u((a=null!=(a=n.issAlt||(null!=l?l.issAlt:l))?a:o,typeof a===r?a.call(i,{name:"issAlt",hash:{},data:t}):a))+"</p>\n<button id='moreButton'>Even More Info</button>\n"},useData:!0});
+var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(e,l,n,a,s){var t,i=null!=l?l:{},r=n.helperMissing,o="function",u=e.escapeExpression;return"<p>velocity: "+u((t=null!=(t=n.issVel||(null!=l?l.issVel:l))?t:r,typeof t===o?t.call(i,{name:"issVel",hash:{},data:s}):t))+" altitude: "+u((t=null!=(t=n.issAlt||(null!=l?l.issAlt:l))?t:r,typeof t===o?t.call(i,{name:"issAlt",hash:{},data:s}):t))+"</p>\n<button id='newData'>Even More Info</button>\n"},useData:!0});
 
 },{"hbsfy/runtime":23}],30:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(a,n,l,e,s){var t,i=null!=n?n:{},o=l.helperMissing,u="function",m=a.escapeExpression;return"<h1>Hello "+m((t=null!=(t=l.name||(null!=n?n.name:n))?t:o,typeof t===u?t.call(i,{name:"name",hash:{},data:s}):t))+"!</h1>\n<h2>"+m((t=null!=(t=l.issName||(null!=n?n.issName:n))?t:o,typeof t===u?t.call(i,{name:"issName",hash:{},data:s}):t))+"</h2>\n<p>latitude: "+m((t=null!=(t=l.issLat||(null!=n?n.issLat:n))?t:o,typeof t===u?t.call(i,{name:"issLat",hash:{},data:s}):t))+" longitude: "+m((t=null!=(t=l.issLon||(null!=n?n.issLon:n))?t:o,typeof t===u?t.call(i,{name:"issLon",hash:{},data:s}):t))+"</p>\n<button id='button'>More Info</button>\n"},useData:!0});
