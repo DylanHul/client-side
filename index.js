@@ -1,7 +1,7 @@
 const xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
 var button = require('./views/button.hbs')
-var allData = require('./views/newData.hbs')
+var newData = require('./views/newData.hbs')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 
@@ -37,9 +37,9 @@ xhr.get(endpoint, function (err, data) {
 
         function moreButton() {
 
-            var allData = data.body
+            var newData = data.body
 
             var target = document.getElementsByTagName('main')[0]
-            target.innerHTML += newData({allData: allData})
+            target.innerHTML += newData({newData: newData})
         }
 })
