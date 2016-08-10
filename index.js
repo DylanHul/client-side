@@ -2,7 +2,7 @@ const xhr = require('xhr')
 const greeting = require('./views/greeting.hbs')
 const button = require('./views/button.hbs')
 
-var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
+const endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 
 xhr.get(endpoint, function (err, data) {
   if (err) {
@@ -19,7 +19,7 @@ xhr.get(endpoint, function (err, data) {
 
   // Replace 'Space' below with the response
 
-  var target = document.getElementsByTagName('main')[0]
+  const target = document.getElementsByTagName('main')[0]
   target.innerHTML = greeting({name: 'Dylan', issName: issName, issLat: issLat, issLon: issLon})
 
   document.getElementById('button').addEventListener('click', refreshButton)
