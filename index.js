@@ -37,7 +37,7 @@ xhr.get(endpoint, function (err, data) {
 
         function moreButton() {
 
-            var newData = data.body
+            var newData = JSON.parse(data.body)
 
             var target = document.getElementsByTagName('main')[0]
             target.innerHTML += newData({newData: newData})
