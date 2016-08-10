@@ -1,6 +1,6 @@
-var xhr = require('xhr')
-var greeting = require('./views/greeting.hbs')
-var button = require('./views/button.hbs')
+const xhr = require('xhr')
+const greeting = require('./views/greeting.hbs')
+const button = require('./views/button.hbs')
 
 var endpoint = 'https://api.wheretheiss.at/v1/satellites/25544'
 
