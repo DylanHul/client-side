@@ -1,4 +1,4 @@
-const xhr = require('xhr')
+var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
 var button = require('./views/button.hbs')
 var newData = require('./views/newData.hbs')
