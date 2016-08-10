@@ -84,9 +84,9 @@ function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];fo
 
 },{}],29:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(e,l,n,a,s){var t,i=null!=l?l:{},r=n.helperMissing,o="function",u=e.escapeExpression;return"<p>velocity: "+u((t=null!=(t=n.issVel||(null!=l?l.issVel:l))?t:r,typeof t===o?t.call(i,{name:"issVel",hash:{},data:s}):t))+" altitude: "+u((t=null!=(t=n.issAlt||(null!=l?l.issAlt:l))?t:r,typeof t===o?t.call(i,{name:"issAlt",hash:{},data:s}):t))+"</p>\n<button id='newData'>Even More Info</button>\n"},useData:!0});
+
 },{"hbsfy/runtime":23}],30:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(a,n,l,e,s){var t,i=null!=n?n:{},o=l.helperMissing,u="function",m=a.escapeExpression;return"<h1>Hello "+m((t=null!=(t=l.name||(null!=n?n.name:n))?t:o,typeof t===u?t.call(i,{name:"name",hash:{},data:s}):t))+"!</h1>\n<h2>"+m((t=null!=(t=l.issName||(null!=n?n.issName:n))?t:o,typeof t===u?t.call(i,{name:"issName",hash:{},data:s}):t))+"</h2>\n<p>latitude: "+m((t=null!=(t=l.issLat||(null!=n?n.issLat:n))?t:o,typeof t===u?t.call(i,{name:"issLat",hash:{},data:s}):t))+" longitude: "+m((t=null!=(t=l.issLon||(null!=n?n.issLon:n))?t:o,typeof t===u?t.call(i,{name:"issLon",hash:{},data:s}):t))+"</p>\n<button id='button'>More Info</button>\n"},useData:!0});
-
 },{"hbsfy/runtime":23}],31:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(e,a,n,l,r){var t;return"<p> "+e.escapeExpression((t=null!=(t=n.newData||(null!=a?a.newData:a))?t:n.helperMissing,"function"==typeof t?t.call(null!=a?a:{},{name:"newData",hash:{},data:r}):t))+" </p>\n"},useData:!0});
 
