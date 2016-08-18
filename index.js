@@ -1,4 +1,4 @@
-const xhr = require('xhr')
+// const xhr = require('xhr')
 const greeting = require('./views/greeting.hbs')
 const button = require('./views/button.hbs')
 
